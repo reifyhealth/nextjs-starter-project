@@ -1,22 +1,49 @@
 import {Button,
         PageHeader,
-        message} from 'antd'
+        message} from '@reifyhealth/picasso-pkg'
 
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-<PageHeader
-title="Second post"
-subTitle="MDX!"
-onBack={()=> location.href = "/" }
-extra={
-  <Button type="primary" onClick={() => message.info("Clicked!")}>Click me</Button>
-}>
-</PageHeader>
+export function CustomPageHeader(props) {
+  const router = useRouter()
+  return <>
+    <PageHeader
+    title={props.title}
+    subTitle={props.subTitle}
+    onBack={()=> router.push("/") }
+    >
+    </PageHeader>
+  </>
+}
 
-# Welcome to the end
+<CustomPageHeader
+  title="Page 2"
+  subTitle="MDX!">
+</CustomPageHeader>
+
+<div className="padding-xl">
+
+# Markdown
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ```
 <Button type="primary" onClick={() => message.info("Clicked!")}>Click me</Button>
 ```
+
+## More markdown
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+**bold**
+
+_italic_
+
+> blockquote
+
+* List Item 1
+* List Item 2
+* List Item 3
+
+[links](https://www.youtube.com/watch?v=xvFZjo5PgG0)
+
+</div>
