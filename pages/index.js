@@ -22,8 +22,7 @@ export default function Home() {
         <Link href="/posts/second-post">
           <Button type="link" >Page 2</Button>
         </Link>
-        
-        <Button type="link" href="https://nextjs.org">NextJS docs</Button>
+
         <Button type="link" href="https://nextjs.org">NextJS docs</Button>
         <Button type="link" href="https://picasso-sprints.herokuapp.com/">Picasso docs</Button>
         <Button type="primary" onClick={() => message.info(friendlyGreeting())}>Click</Button>
